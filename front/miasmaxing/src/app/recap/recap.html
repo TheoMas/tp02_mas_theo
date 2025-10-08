@@ -1,0 +1,13 @@
+<div class="recapContainer">
+    <p>Merci pour votre contribution à la protection de l'environnement !</p>
+    <p>Voici un récapitulatif des informations que vous avez fournies :</p>
+    <p>Titre : {{ pollutionFormValues['pollutionTitle'] }} </p>
+    <p>Type : {{ pollutionFormValues['pollutionType'] }} </p>
+    <p>Description : {{ pollutionFormValues['pollutionDescription'] }} </p>
+    <p>Date : {{ pollutionFormValues['pollutionDate'] }} </p>
+    <p>Lieu : {{ pollutionFormValues['pollutionLocation'] }} </p>
+    <p>Latitude : {{ pollutionFormValues['pollutionLatitude'] }} </p>
+    <p>Longitude : {{ pollutionFormValues['pollutionLongitude'] }} </p>
+    <p>Photo : </p>
+    <img [src]="pollutionFormValues['pollutionPhoto']" class="photo" *ngIf="pollutionFormValues['pollutionPhoto'] != null" alt="Photo de pollution" />
+</div>

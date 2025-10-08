@@ -1,0 +1,39 @@
+    <div class="formContainer">
+    @if (!pollutionFormValid){
+        <form [formGroup]="pollutionForm" (ngSubmit)="onSubmit" class="pollutionForm">
+            <label for="title">Titre : </label>
+            <input class="formInput" id="title" type="text" formControlName="pollutionTitle" />
+
+            <label for="type">Type : </label>
+            <input class="formInput" id="type" type="text" formControlName="pollutionType" />
+
+            <label for="description">Description : </label>
+            <textarea class="formInput" id="description" formControlName="pollutionDescription"></textarea>
+
+            <label for="date">Date : </label>
+            <input class="formInput" id="date" type="date" formControlName="pollutionDate" />
+
+            <label for="location">Lieu : </label>
+            <input class="formInput" id="location" type="text" formControlName="pollutionLocation" />
+
+            <label for="latitude">Latitude : </label>
+            <input class="formInput" id="latitude" type="text" formControlName="pollutionLatitude" />
+
+            <label for="longitude">Longitude : </label>
+            <input class="formInput" id="longitude" type="text" formControlName="pollutionLongitude" />
+
+            <label for="photo">Photo : </label>
+            <input class="formInput" id="photo" type="text" formControlName="pollutionPhoto" />
+
+            <button class="formButton" type="submit" [disabled]="!pollutionForm.valid" (click)="onSubmit()">Envoyer</button>
+        </form>
+        }
+        @if (pollutionFormValid) {
+        <div class="recapMessage">
+            <app-recap [pollutionFormValues]="pollutionFormValues"></app-recap>
+            <button class="formButton" (click)="pollutionFormValid = false">Faire un autre signalement</button>
+        </div>
+        }
+    </div>
+
+
